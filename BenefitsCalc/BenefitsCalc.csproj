@@ -105,7 +105,6 @@
   <ItemGroup>
     <Resource Include="mainPanelBackGround.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Icon.png" />
   </ItemGroup>
