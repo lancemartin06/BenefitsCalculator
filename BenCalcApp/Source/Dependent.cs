@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BenefitsCalc.Source
+namespace BenCalcApp.Source
 {
     class Dependent
     {

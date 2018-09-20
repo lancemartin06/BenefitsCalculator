@@ -23,13 +23,8 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <Image Height="51" Canvas.Left="595" Canvas.Top="358" Width="55">
-                <Image.OpacityMask>
-                    <ImageBrush ImageSource="Icon.png"/>
-                </Image.OpacityMask>
-            </Image>
             <Button x:Name="updateButton" Content="Update" Canvas.Left="321" Canvas.Top="369" Width="87" Height="30" Background="#FF2BB073" BorderBrush="#FF2BB073" Foreground="#FFF7F5F5" FontFamily="Century Gothic" Click="updateButton_Click"/>
-            <Canvas x:Name="dependentPanel" Height="156" Canvas.Left="5" Canvas.Top="208" Width="393" Visibility="Hidden">
+            <Canvas x:Name="dependentPanel" Height="156" Canvas.Left="5" Canvas.Top="208" Width="393" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Hidden">
                 <TextBox x:Name="dependentNameTextBox" Height="23" Canvas.Left="123" TextWrapping="Wrap" Canvas.Top="10" Width="152"/>
                 <Label Content="Name" Canvas.Left="10" Canvas.Top="10" FontFamily="Calibri" FontSize="14" Foreground="White"/>
                 <ComboBox x:Name="dependentRelationshipComboBox" Canvas.Left="123" Canvas.Top="47" Width="152" IsReadOnly="True">

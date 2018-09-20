@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="CalcApp.App"
+    x:Class="BenCalcApp.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CalcApp">
+    xmlns:local="using:BenCalcApp">
 
     <Application.Resources>
         <ResourceDictionary>

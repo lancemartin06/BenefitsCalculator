@@ -162,7 +162,7 @@ button,
 input,
 select,
 textarea {
-  margin: 0;
+  margin: 0 4px 0 2px;
   font-family: inherit;
   font-size: 100%;
 }
@@ -1680,7 +1680,6 @@ input[type="file"] {
 
 select[multiple],
 select[size] {
-  height: auto;
 }
 
 select optgroup {
@@ -4953,10 +4952,9 @@ a.list-group-item.active > .badge,
 }
 
 @media screen and (min-width: 768px) {
-  .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
+    .jumbotron {
+        padding-bottom: 48px;
+    }
   .container .jumbotron {
     padding-right: 60px;
     padding-left: 60px;

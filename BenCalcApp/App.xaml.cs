@@ -5,7 +5,7 @@ using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace CalcApp
+namespace BenCalcApp
 {
     public sealed partial class App : Application
     {

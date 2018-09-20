@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSHTML5;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BenCalcWebApp
+namespace BenCalcApp.Source
 {
-    internal class Employee
+    class Employee1
     {
         /// <summary>
         /// 
         /// </summary>
-        public string Name { get; set; } = "";
+        public string Name { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string EmployeeID { get; set; } = "";
+        public int EmployeeID { get; set; }
         /// <summary>
         /// 
         /// </summary>
