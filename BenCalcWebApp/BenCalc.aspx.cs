@@ -28,19 +28,19 @@ namespace BenCalcWebApp
 
         }
         /// <summary>
-        /// 
+        /// This method is responisble for updating the summary. 
         /// </summary>
         protected void updateSummary()
         {
-            if (Session["employee"] != null)
+            if (Session["employee"] != null)                        //If the employee is set in the session
             {
-                this.Candidate = (Employee)Session["employee"];
+                this.Candidate = (Employee)Session["employee"];     //Set the current candidate from session
             }
 
-            this.Candidate.Name = EmployeeNameTextBox.Text;
+            this.Candidate.Name = EmployeeNameTextBox.Text;         //Assign the text boxes to properties of the candidate.
             this.Candidate.EmployeeID = EmployeeIDTextBox.Text;
 
-            TotalAnnualCostLabel.Text = this.Candidate.TotalCost.ToString();
+            TotalAnnualCostLabel.Text = this.Candidate.TotalCost.ToString();    //Assign the labels' text with the properties of the employee.
 
             DiscountLabel.Text = this.Candidate.TotalDiscount.ToString();
 
@@ -49,34 +49,35 @@ namespace BenCalcWebApp
 
        
         /// <summary>
-        /// 
+        /// This method handles the event of the NewEmployeeButton having been clicked.
+        /// This method is responsible for creating a new employee and 
+        /// resetting values in textboxes. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void NewEmployee_Click(object sender, EventArgs e)
         {
-            Candidate = new Employee();
-            if (Session["employee"] != null)
+            Candidate = new Employee();                 //Create new employee
+            if (Session["employee"] != null)            //If employee is already set, write over it.
             {
                 Session["employee"] = Candidate;
             }
-            else
+            else                                        //Otherwise, add employee to the session. 
             {
                 Session.Add("employee", this.Candidate);
             }
 
-            EmployeeNameTextBox.Text = "";
+            EmployeeNameTextBox.Text = "";              //Reset text in textboxes.
             EmployeeIDTextBox.Text = "";
 
-            setEmployeeDetailsVisible();
+            setEmployeeDetailsVisible();                //Make the controls associated with the employee visible.
 
-            NewDependentButton.Visible = true;
-            UpdateButton.Visible = true;
+            NewDependentButton.Visible = true;          //Show the new dependent button. 
+            UpdateButton.Visible = true;                //Show the update button. 
 
 
         } 
         /// <summary>
-        /// 
+        /// This method's purpose is to make all 
+        /// controls associated with an employee visible.
         /// </summary>
         protected void setEmployeeDetailsVisible()
         {
@@ -90,45 +91,47 @@ namespace BenCalcWebApp
 
         }
         /// <summary>
-        /// 
+        /// This method is responsible for updating the list
+        /// of dependents in the dependent list box. 
         /// </summary>
         private void updateDependentList()
         {
-            DependentListBox.Items.Clear();
+            DependentListBox.Items.Clear();                     //Clear items in list box. 
 
-            foreach(Dependent dependent in Candidate.Dependents)
+            foreach(Dependent dependent in Candidate.Dependents) //Loop through all dependents and add them to list. 
             {
                 DependentListBox.Items.Add(dependent.Name);
             }
         }
         /// <summary>
-        /// 
+        /// This method handles the event where the new dependent 
+        /// button is clicked. It makes the panel associated with dependents
+        /// visible. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void NewDependentButton_Click(object sender, EventArgs e)
         {
             DependentPanel.Visible = true;
         }
         /// <summary>
-        /// 
+        /// This method handles the event where the add dependent button is clicked.
+        /// It adds the dependent to the list of dependents in the employee, then resets
+        /// the text boxes. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void AddDependentButton_Click(object sender, EventArgs e)
         {
-            updateSummary();
+            updateSummary();                    //Call update to update and assign the employee from session.
 
             this.Candidate.addDependent(new Dependent(DependentNameTextBox.Text, this.Candidate, ((Dependent.Relation)RelationshipDropDownList.SelectedIndex)));
 
-            updateSummary();
+            updateSummary();            
 
-            updateDependentList();
+            updateDependentList();              //Update the dependents list.
 
-            clearDependentTextBoxes();
+            clearDependentTextBoxes();          //Clear textboxes associated with dependents
         }
         /// <summary>
-        /// 
+        /// This method is responsible for clearing text in 
+        /// dependent's textboxes. 
         /// </summary>
         private void clearDependentTextBoxes()
         {
@@ -136,15 +139,14 @@ namespace BenCalcWebApp
             RelationshipDropDownList.SelectedIndex = 0;
         }
         /// <summary>
-        /// 
+        /// This method handles the event where the update button is 
+        /// clicked. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (userInputValid())
+            if (userInputValid())   //If user did not leave any blank textboxes
             {
-                updateSummary();
+                updateSummary();    //Update the summary. 
             }
             
         }

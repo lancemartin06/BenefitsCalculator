@@ -22,7 +22,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top" style="font-family: 'Century Gothic'; font-size: medium; font-weight: lighter; background-color: #FFFFFF; color: #0000FF">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" runat="server" href="~/" style="background-color: #FFFFFF; font-family: 'Century Gothic'; font-size: large; font-weight: lighter; color: #0000FF">Benefits Calculator</a>
+                    <a class="navbar-brand" runat="server" style="background-color: #FFFFFF; font-family: 'Century Gothic'; font-size: large; font-weight: lighter; color: #0000FF">Benefits Calculator</a>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 
                 <asp:ScriptManager runat="server">
                     <Scripts>
-                        <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%><%--Framework Scripts--%>
+                        
                         <asp:ScriptReference Name="MsAjaxBundle" />
                         <asp:ScriptReference Name="jquery" />
                         <asp:ScriptReference Name="bootstrap" />
@@ -45,14 +45,14 @@
                         <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                         <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                         <asp:ScriptReference Name="WebFormsBundle" />
-                        <%--Site Scripts--%>
+                       
                     </Scripts>
                 </asp:ScriptManager>
 
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> 
+                <p>LanceMartin&copy; <%: DateTime.Now.Year %> 
 
                 </p>
             </footer>
